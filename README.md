@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-this is were ,,
+this is were ,, i dev
