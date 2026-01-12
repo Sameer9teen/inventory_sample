@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
           provider.startAdd();
           await Navigator.of(context).push(
             MaterialPageRoute(builder: (_) => const AddItemScreen()),
-          );
+          );                   /// to the add item screen 
         },
         child: const Icon(Icons.add),
       ),
@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ShadButton.ghost(
-                            child: const Icon(Icons.edit),
+                            child: const Icon(Icons.edit),  //// edit code in the card 
                             onPressed: () async {
                               provider.startEdit(item);
                               await Navigator.of(context).push(

@@ -7,8 +7,8 @@ class InventoryController {
   CollectionReference get _collection => _firestore.collection('inventory');
 
   Future<List<Item>> fetchItems() async {
-    final snapshot = await _collection.get();
-    return snapshot.docs.map(Item.fromFirestore).toList();
+    final snapshot = await _collection.get();    ///this were the collection from the firestore selected were from 
+    return snapshot.docs.map(Item.fromFirestore).toList();  /// from the firestore selected category document from firestore raw format data to the model structure format maps it 
   }
 
   Future<void> addItem({

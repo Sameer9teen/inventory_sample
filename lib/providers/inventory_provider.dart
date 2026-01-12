@@ -2,19 +2,19 @@ import 'package:flutter/foundation.dart';
 import '../controllers/inventory_controller.dart';
 import '../models/item.dart';
 
-class InventoryProvider extends ChangeNotifier {
+class InventoryProvider extends ChangeNotifier {    // holds app sate and updtates UI
   final InventoryController _controller;
 
   InventoryProvider(this._controller);
 
-  List<Item> _items = [];
+  List<Item> _items = [];      ///inventory list 
   String _search = '';
   String? _selectedCategory;
 
   List<Item> get items => _items;
 
   List<Item> get filteredItems {
-    final lowerSearch = _search.toLowerCase();
+    final lowerSearch = _search.toLowerCase();        
     return _items.where((item) {
       final matchesSearch =
           _search.isEmpty || item.name.toLowerCase().contains(lowerSearch);
@@ -88,8 +88,8 @@ class InventoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> save() async {
-    if (name.trim().isEmpty) throw Exception('Item name cannot be empty');
+  Future<void> save() async {                      /// method were the ,decides od the it 
+    if (name.trim().isEmpty) throw Exception('Item name cannot be empty');   /// validation for fields
     final parsedQuantity = int.tryParse(quantity) ?? 0;
     _isSaving = true;
     notifyListeners();
@@ -118,7 +118,7 @@ class InventoryProvider extends ChangeNotifier {
 
   Future<void> addItem({
     required String name,
-    int quantity = 0,
+    int quantity = 0, 
     String? description,
     String? category,
   }) async {

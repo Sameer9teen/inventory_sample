@@ -18,8 +18,8 @@ void main() async {
 
   // Inventory controller + provider
   final controller = InventoryController();
-  final inventoryProvider = InventoryProvider(controller);
-  await inventoryProvider.initialize();
+  final inventoryProvider = InventoryProvider(controller);  //holds state and also the logic
+  await inventoryProvider.initialize();    //initializing of the data 
 
   runApp(MyApp(inventoryProvider: inventoryProvider));
 }
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
-      value: inventoryProvider,
+      value: inventoryProvider,        //for all screens were for this ,were calling of context.watch<InventoryProvider>()
       child: ShadApp.custom(
         themeMode: ThemeMode.light,
         appBuilder: (context) {
