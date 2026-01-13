@@ -55,8 +55,8 @@ class InventoryProvider extends ChangeNotifier {    // holds app sate and updtat
   }
 
   Future<void> initialize() async {
-    _items = await _controller.fetchItems();
-    notifyListeners();
+    _items = await _controller.fetchItems();    ///were fetch the data from the contoller to the model tot he fetch the item data were fetch here
+    notifyListeners();         ///rebuild the ui
   }
 
   Item? _editingItem;
